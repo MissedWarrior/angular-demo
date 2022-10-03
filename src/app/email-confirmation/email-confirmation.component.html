@@ -1,1 +1,20 @@
-<p>email-confirmation works!</p>
+<div class="content">
+  <div class="title">
+    <span>We've send an email confirmation code to {{ email }}</span>
+  </div>
+
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <div class="input-wrapper">
+      <input class="input" formControlName="code" placeholder="Confirmation code"/>
+      <div class="error" *ngIf="form.controls.code.errors">
+        <span>{{ errorMap(form.controls.code.errors) }}</span>
+      </div>
+    </div>
+
+    <div class="button-wrapper">
+      <button class="button">
+        Submit
+      </button>
+    </div>
+  </form>
+</div>

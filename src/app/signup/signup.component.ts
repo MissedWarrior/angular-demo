@@ -65,9 +65,9 @@ export class SignupComponent {
           }
 
           if (response.errors) {
-            Object.keys(response.errors).forEach(item => {
+            return Object.keys(response.errors).forEach(item => {
               const control = this.form.get(item);
-              control?.setErrors(response.errors[item]);
+              control?.setErrors({ server: response.errors[item] });
               control?.valueChanges.pipe(take(1)).subscribe(() => {
                 control?.setErrors(null);
               });

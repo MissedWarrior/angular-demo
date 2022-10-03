@@ -1,0 +1,47 @@
+.content {
+  height: 100%;
+  overflow: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.input-wrapper {
+  width: 300px;
+}
+
+.input-wrapper:not(:last-of-type) {
+  margin-bottom: 16px;
+}
+
+.input {
+  padding: 8px;
+  border-radius: 4px;
+  border: none;
+  width: 100%;
+}
+
+.button {
+  appearance: none;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 500;
+  color: white;
+  margin-bottom: 48px;
+}
+
+.button-wrapper {
+  margin-top: 24px;
+}
+
+.error {
+  margin-top: 4px;
+  color: #ac2929;
+}

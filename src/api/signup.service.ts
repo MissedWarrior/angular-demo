@@ -28,7 +28,7 @@ export class SignupService {
     } else {
       return scheduled([{
         errors: {
-          confirm: {
+          code: {
             message: 'Wrong code',
           },
         },
