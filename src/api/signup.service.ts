@@ -3,12 +3,12 @@ import { HttpClient } from '@angular/common/http';
 
 import { asyncScheduler, catchError, map, scheduled } from 'rxjs';
 
-import { UserData, UserInfo, UserRegInfo } from './registration.types';
+import { UserData, UserInfo, UserRegInfo } from './signup.types';
 import { ResponseWithValidationError } from './types';
 import { handleError } from './helpers';
 
 @Injectable({ providedIn: 'root' })
-export class RegistrationService {
+export class SignupService {
   private EMAIL_CODE = '123456';
 
   constructor(private http: HttpClient) {}
@@ -19,7 +19,7 @@ export class RegistrationService {
     return scheduled([{ data: response }], asyncScheduler);
   }
 
-  confirmEmail(code: string): ResponseWithValidationError<UserInfo> {
+  confirmEmail(email: string, code: string): ResponseWithValidationError<UserInfo> {
     if (code === this.EMAIL_CODE) {
       return this.http.get<UserInfo>('https://randomuser.me/api/').pipe(
         map(item => ({ data: item })),

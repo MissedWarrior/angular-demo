@@ -1,1 +1,26 @@
-<p>signup works!</p>
+<div class="content">
+  <div class="title">
+    <span>Signup to our service!</span>
+  </div>
+
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <div class="input-wrapper">
+      <input class="input" formControlName="email" placeholder="Email"/>
+      <div class="error" *ngIf="form.controls.email.errors">
+        <span>{{ errorMap(form.controls.email.errors) }}</span>
+      </div>
+    </div>
+    <div class="input-wrapper">
+      <input class="input" placeholder="Password" type="password" formControlName="pass"/>
+      <div class="error" *ngIf="form.controls.pass.errors">
+        <span>{{ errorMap(form.controls.pass.errors) }}</span>
+      </div>
+    </div>
+
+    <div class="button-wrapper">
+      <button class="button">
+        Submit
+      </button>
+    </div>
+  </form>
+</div>

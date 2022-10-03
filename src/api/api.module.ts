@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { RegistrationService } from './registration.service';
+import { SignupService } from './signup.service';
 
 @NgModule({
   imports: [CommonModule],
-  providers: [RegistrationService],
+  providers: [SignupService],
 })
 export class ApiModule {}
