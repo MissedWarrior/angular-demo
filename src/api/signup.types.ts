@@ -11,7 +11,7 @@ export interface UserInfo {
   results: User[];
 }
 
-interface User {
+export interface User {
   nat: string;
   gender: string;
   phone: string;

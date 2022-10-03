@@ -2,10 +2,11 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder } from '@angular/forms';
 
+import { take } from 'rxjs';
+
 import { StorageService } from '@/shared/storage/storage.service';
 import { mapError, required, ValidationError } from '@/shared/forms/validators';
 import { SignupService } from '@/api/signup.service';
-import { take } from 'rxjs';
 
 @Component({
   selector: 'app-email-confirmation',

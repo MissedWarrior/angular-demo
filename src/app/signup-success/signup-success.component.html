@@ -1,1 +1,11 @@
-<p>signup-success works!</p>
+<div class="content">
+  <div class="title">
+    <span>Welcome to our service, dear {{ user.name.first }}!</span>
+  </div>
+
+  <div>
+    <div>
+      <img [src]="user.picture.medium" [alt]="user.name.first">
+    </div>
+  </div>
+</div>
