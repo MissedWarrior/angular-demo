@@ -1,28 +1,33 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+import { SignupComponent } from '@/app/signup';
+import { SignupSuccessComponent } from '@/app/signup-success';
+import { EmailConfirmationComponent } from '@/app/email-confirmation';
+
 const routes: Routes = [
   {
-    path: '/',
+    path: '',
     redirectTo: '/signup',
+    pathMatch: 'full',
   },
   {
-    path: '/signup',
+    path: 'signup',
     children: [
       {
         path: '',
-        component: undefined,
+        component: SignupComponent,
         pathMatch: 'full',
       },
       {
-        path: 'email-confirm',
-        component: undefined,
+        path: 'email-confirmation',
+        component: EmailConfirmationComponent,
         pathMatch: 'full',
       },
       {
         path: 'success',
+        component: SignupSuccessComponent,
         pathMatch: 'full',
-        component: undefined,
       },
     ],
   },
